@@ -1,4 +1,2 @@
-practical: Bài tập đơn
+practical: Bài tập file đơn Unit1
 
-
-còn lại: bài tập dạng project
