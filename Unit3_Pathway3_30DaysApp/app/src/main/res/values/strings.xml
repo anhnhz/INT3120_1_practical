@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">30_Days_App</string>
+
+    <string name="description_1">Jumping jacks – Bật nhảy dang tay chân ra, khép lại liên tục.</string>
+    <string name="description_2">Wall sit – Ngồi dựa tường, gối gập 90°, giữ yên.</string>
+    <string name="description_3">Push-up – Chống tay xuống đất, hạ ngực gần sàn rồi đẩy lên.</string>
+    <string name="description_4">Crunch – Nằm ngửa, co gối, gập bụng nâng vai lên.</string>
+    <string name="description_5">Step-up – Bước một chân lên bục ghế, đứng thẳng, rồi đổi chân.</string>
+
+    <string name="description_6">Squat – Đứng thẳng, hạ mông xuống như ngồi ghế, giữ lưng thẳng.</string>
+    <string name="description_7">Triceps dip – Chống tay vào ghế, hạ người xuống rồi đẩy lên.</string>
+    <string name="description_8">Plank – Chống cẳng tay xuống sàn, giữ thẳng người.</string>
+    <string name="description_9">High knees – Chạy tại chỗ, nâng gối cao ngang hông.</string>
+    <string name="description_10">Lunge – Bước một chân lên trước, hạ gối sau gần sát sàn.</string>
+
+    <string name="description_11">Push-up and rotation – Chống đẩy rồi xoay người nâng tay lên trời.</string>
+    <string name="description_12">Side plank – Nằm nghiêng, chống khuỷu tay, nâng hông giữ thẳng.</string>
+    <string name="description_13">Superman – Nằm sấp, nâng tay và chân lên cùng lúc.</string>
+    <string name="description_14">Reverse crunch – Nằm ngửa, nâng gối về phía ngực, cuộn hông.</string>
+    <string name="description_15">Mountain climber – Ở tư thế chống đẩy, kéo gối luân phiên về ngực.</string>
+
+    <string name="description_16">Bridge – Nằm ngửa, gối co, nâng hông lên cao.</string>
+    <string name="description_17">Chair dip – Giống triceps dip, dùng ghế để hạ – nâng thân trên.</string>
+    <string name="description_18">Leg raises – Nằm ngửa, nâng thẳng hai chân lên rồi hạ xuống.</string>
+    <string name="description_19">Bird dog – Chống tay gối, duỗi thẳng tay và chân đối diện.</string>
+    <string name="description_20">Plank jacks – Plank và bật nhảy chân ra, khép lại.</string>
+
+    <string name="description_21">Side plank with leg lift – Side plank, đồng thời nâng chân trên lên.</string>
+    <string name="description_22">Wall push-up – Chống tay vào tường, hạ người rồi đẩy ra.</string>
+    <string name="description_23">Bodyweight squat – Squat với trọng lượng cơ thể, không tạ.</string>
+    <string name="description_24">High plank – Tư thế plank chống tay, giữ thẳng người.</string>
+    <string name="description_25">Squat to press – Squat rồi đứng dậy đưa tay cao như đẩy vật nặng.</string>
+
+    <string name="description_26">Forward lunge – Lunge bước tới trước, hạ gối sau gần sát sàn.</string>
+    <string name="description_27">Glute kickback – Chống tay gối, đá thẳng một chân ra sau.</string>
+    <string name="description_28">Bicycle crunch – Nằm ngửa, gập bụng luân phiên chạm cùi chỏ – gối.</string>
+    <string name="description_29">Skater jump – Nhảy chéo sang hai bên như trượt băng.</string>
+    <string name="description_30">Burpee – Đứng, squat xuống chống tay, nhảy về tư thế plank, rồi bật nhảy lên.</string>
+
+</resources>

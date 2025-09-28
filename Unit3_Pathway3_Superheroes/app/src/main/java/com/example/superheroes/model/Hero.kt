@@ -1,6 +1,5 @@
 package com.example.superheroes.model
 
-import android.accessibilityservice.GestureDescription
 import com.example.superheroes.R
 
 data class Hero(
