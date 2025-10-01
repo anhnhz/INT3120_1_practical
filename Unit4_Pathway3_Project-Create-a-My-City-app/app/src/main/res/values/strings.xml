@@ -1,0 +1,75 @@
+<resources>
+    <string name="app_name">MyCity</string>
+    <!-- ☕ Quán cà phê -->
+    <string name="placename_cafe_1">Tranquil Books &amp; Coffee</string>
+    <string name="placename_cafe_2">Cộng Cà Phê</string>
+    <string name="placename_cafe_3">The Note Coffee (Hồ Gươm)</string>
+    <string name="placename_cafe_4">Hidden Gem Coffee</string>
+
+    <!-- 🍴 Nhà hàng -->
+    <string name="placename_restaurant_1">Nhà hàng Ngon (Phan Bội Châu)</string>
+    <string name="placename_restaurant_2">Quán Ăn Ngon 34</string>
+    <string name="placename_restaurant_3">Hải sản Biển Đông</string>
+    <string name="placename_restaurant_4">Grill 63 (Lotte Tower)</string>
+
+    <!-- 👶 Địa điểm phù hợp với trẻ em -->
+    <string name="placename_kids_1">VinKE &amp; Thủy Cung Times City</string>
+    <string name="placename_kids_2">KizCiti</string>
+    <string name="placename_kids_3">Thiên Đường Bảo Sơn</string>
+    <string name="placename_kids_4">Bảo tàng Thiếu nhi Việt Nam</string>
+
+    <!-- 🌳 Công viên -->
+    <string name="placename_park_1">Công viên Thống Nhất</string>
+    <string name="placename_park_2">Công viên Cầu Giấy</string>
+    <string name="placename_park_3">Công viên Hòa Bình</string>
+    <string name="placename_park_4">Công viên Yên Sở</string>
+
+    <!-- 🛍️ Trung tâm mua sắm -->
+    <string name="placename_mall_1">Vincom Center Bà Triệu</string>
+    <string name="placename_mall_2">Lotte Center Hanoi</string>
+    <string name="placename_mall_3">Aeon Mall Hà Đông</string>
+    <string name="placename_mall_4">Aeon Mall Long Biên</string>
+    <string name="placename_mall_5">Tràng Tiền Plaza</string>
+
+    <string name="category_1">Quán cà phê</string>
+    <string name="category_2">Nhà hàng</string>
+    <string name="category_3">Địa điểm phù hợp với trẻ em</string>
+    <string name="category_4">Công viên</string>
+    <string name="category_5">Trung tâm mua sắm</string>
+
+    <!-- ☕ Quán cà phê -->
+    <string name="description_cafe_1">Không gian yên tĩnh, nhiều sách, thích hợp đọc và làm việc.</string>
+    <string name="description_cafe_2">Phong cách vintage, đặc trưng với cà phê dừa và không khí hoài niệm.</string>
+    <string name="description_cafe_3">Nổi bật với hàng ngàn tờ giấy note đầy màu sắc từ khách ghé.</string>
+    <string name="description_cafe_4">Trang trí bằng đồ tái chế, tạo cảm giác lạ mắt, ấm cúng.</string>
+
+    <!-- 🍴 Nhà hàng -->
+    <string name="description_restaurant_1">Tổng hợp nhiều món ăn truyền thống Việt Nam.</string>
+    <string name="description_restaurant_2">Phù hợp nhóm đông người với món Bắc – Trung – Nam.</string>
+    <string name="description_restaurant_3">Nổi tiếng với hải sản tươi sống, đa dạng món.</string>
+    <string name="description_restaurant_4">Nhà hàng sang trọng, view đẹp từ tầng cao.</string>
+
+    <!-- 👶 Địa điểm phù hợp với trẻ em -->
+    <string name="description_kids_1">Tổ hợp vui chơi, giáo dục kết hợp thủy cung lớn.</string>
+    <string name="description_kids_2">Khu vui chơi hướng nghiệp, trẻ hóa thân vào nhiều nghề khác nhau.</string>
+    <string name="description_kids_3">Công viên giải trí kết hợp safari mini và khu trò chơi.</string>
+    <string name="description_kids_4">Có nhiều hoạt động trải nghiệm dành riêng cho trẻ em.</string>
+
+    <!-- 🌳 Công viên -->
+    <string name="description_park_1">Rộng rãi, nhiều cây xanh, có hồ Bảy Mẫu.</string>
+    <string name="description_park_2">Thoáng mát, nhiều khu vui chơi cho trẻ em.</string>
+    <string name="description_park_3">Biểu tượng hòa bình, không gian thoáng và hiện đại.</string>
+    <string name="description_park_4">Lớn nhất Hà Nội, nhiều hồ nước và khu picnic ngoài trời.</string>
+
+    <!-- 🛍️ Trung tâm mua sắm -->
+    <string name="description_mall_1">Một trong những TTTM lâu đời, đủ mua sắm, ăn uống, giải trí.</string>
+    <string name="description_mall_2">Cao tầng, kết hợp mua sắm, ăn uống và đài quan sát.</string>
+    <string name="description_mall_3">Rộng lớn, nhiều thương hiệu Nhật và khu ẩm thực.</string>
+    <string name="description_mall_4">Trung tâm thương mại hiện đại ở Long Biên, phù hợp gia đình.</string>
+    <string name="description_mall_5">Trung tâm mua sắm cao cấp gần Hồ Gươm.</string>
+
+
+    <string name="screen_title_chooseCategoty">Chọn loại địa điểm</string>
+    <string name="screen_title_chooseLocation">Chọn địa điểm</string>
+    <string name="screen_title_locationDetail">Thông tin địa điểm</string>
+</resources>
