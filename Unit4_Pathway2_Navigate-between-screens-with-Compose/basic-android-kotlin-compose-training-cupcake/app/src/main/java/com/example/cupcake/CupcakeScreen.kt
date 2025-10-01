@@ -96,7 +96,7 @@ fun CupcakeApp(
     val backStackEntry by navController.currentBackStackEntryAsState()
     val currentScreen = CupcakeScreen.valueOf(
         backStackEntry?.destination?.route ?: CupcakeScreen.Start.name
-   
+
     )
     Scaffold(
         topBar = {
