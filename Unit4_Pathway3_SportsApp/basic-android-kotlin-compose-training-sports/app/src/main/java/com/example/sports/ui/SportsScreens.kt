@@ -17,6 +17,7 @@
 package com.example.sports.ui
 
 import android.app.Activity
+import android.widget.Toast
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -41,7 +42,9 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.Checkbox
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
@@ -67,6 +70,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.sports.R
@@ -100,15 +104,34 @@ fun SportsApp(
                 isShowingListPage = uiState.isShowingListPage,
                 onBackButtonClick = { viewModel.navigateToListPage() },
             )
+        },
+        floatingActionButton = {
+            if (uiState.isShowingListPage) {
+                FloatingActionButton(
+                    onClick = {
+                        val total = viewModel.getTotalCalories()
+
+                        Toast
+                            .makeText(context, "Total Calories: $total", Toast.LENGTH_SHORT)
+                            .show()
+                    }
+                ) {
+                    Text("Next")
+                }
+            }
         }
     ) { innerPadding ->
         if(contentType == SportsContentType.ListOnly) {
             if (uiState.isShowingListPage) {
                 SportsList(
                     sports = uiState.sportsList,
+                    selectedSportIds = uiState.selectedSportIds,
                     onClick = {
                         viewModel.updateCurrentSport(it)
                         viewModel.navigateToDetailPage()
+                    },
+                    onClickCheckbox = { sport ->
+                        viewModel.toggleSportSelection(sport)
                     },
                     contentPadding = innerPadding,
                     modifier = Modifier
@@ -119,6 +142,7 @@ fun SportsApp(
                             end = dimensionResource(R.dimen.padding_medium),
                         )
                 )
+
             } else {
                 SportsDetail(
                     selectedSport = uiState.currentSport,
@@ -130,12 +154,16 @@ fun SportsApp(
             }
         } else{
             SportsListAndDetails(
-                onBackPressed = {(context as? Activity)?.finish()},
+                onBackPressed = { (context as? Activity)?.finish() },
                 onClick = {
                     viewModel.updateCurrentSport(it)
                 },
                 selectedSport = uiState.currentSport,
-                contentPadding = innerPadding
+                onClickCheckbox = { sport ->
+                    viewModel.toggleSportSelection(sport)
+                },
+                contentPadding = innerPadding,
+                selectedSportIds = uiState.selectedSportIds
             )
         }
     }
@@ -149,7 +177,7 @@ fun SportsApp(
 fun SportsAppBar(
     onBackButtonClick: () -> Unit,
     isShowingListPage: Boolean,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
 ) {
     TopAppBar(
         title = {
@@ -186,7 +214,9 @@ fun SportsAppBar(
 private fun SportsListItem(
     sport: Sport,
     onItemClick: (Sport) -> Unit,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    onClickCheckbox:(Sport) -> Unit ={},
+    isSelected: Boolean,
 ) {
     Card(
         elevation = CardDefaults.cardElevation(),
@@ -241,7 +271,15 @@ private fun SportsListItem(
                         )
                     }
                 }
+                Text(
+                    text = sport.caloriesBurned.toString() + "calories"
+                )
             }
+            Checkbox(
+                checked = isSelected,
+                onCheckedChange = { onClickCheckbox(sport) }
+            )
+
         }
     }
 }
@@ -263,7 +301,9 @@ private fun SportsListImageItem(sport: Sport, modifier: Modifier = Modifier) {
 @Composable
 private fun SportsList(
     sports: List<Sport>,
+    selectedSportIds: Set<Int>,
     onClick: (Sport) -> Unit,
+    onClickCheckbox: (Sport) -> Unit,
     modifier: Modifier = Modifier,
     contentPadding: PaddingValues = PaddingValues(0.dp),
 ) {
@@ -275,7 +315,9 @@ private fun SportsList(
         items(sports, key = { sport -> sport.id }) { sport ->
             SportsListItem(
                 sport = sport,
-                onItemClick = onClick
+                isSelected = selectedSportIds.contains(sport.id),
+                onItemClick = onClick,
+                onClickCheckbox = onClickCheckbox
             )
         }
     }
@@ -353,6 +395,7 @@ private fun SportsDetail(
                             color = MaterialTheme.colorScheme.inverseOnSurface,
                         )
                     }
+
                 }
             }
             Text(
@@ -363,17 +406,20 @@ private fun SportsDetail(
                     horizontal = dimensionResource(R.dimen.padding_detail_content_horizontal)
                 )
             )
+
         }
     }
 }
 
-//@Preview
+@Preview
 @Composable
 fun SportsListItemPreview() {
     SportsTheme {
         SportsListItem(
             sport = LocalSportsDataProvider.defaultSport,
-            onItemClick = {}
+            onItemClick = {},
+            onClickCheckbox = {},
+            isSelected = true,
         )
     }
 }
@@ -385,6 +431,8 @@ fun SportsListAndDetails(
     onClick: (Sport) -> Unit,
     selectedSport: Sport,
     contentPadding: PaddingValues,
+    selectedSportIds: Set<Int>,
+    onClickCheckbox : (Sport)->Unit,
 ) {
     Row(
         modifier = modifier.fillMaxSize()
@@ -393,7 +441,9 @@ fun SportsListAndDetails(
             sports = LocalSportsDataProvider.getSportsData(),
             onClick = onClick,
             modifier = modifier.weight(1f),
-            contentPadding = contentPadding
+            contentPadding = contentPadding,
+            selectedSportIds = selectedSportIds ,
+            onClickCheckbox = onClickCheckbox
         )
         SportsDetail(
             selectedSport = selectedSport ,
@@ -412,15 +462,15 @@ fun SportsListAndDetails(
 //}
 
 
-//@Preview
-@Composable
-fun SportsListPreview() {
-    SportsTheme {
-        Surface {
-            SportsList(
-                sports = LocalSportsDataProvider.getSportsData(),
-                onClick = {},
-            )
-        }
-    }
-}
+////@Preview
+//@Composable
+//fun SportsListPreview() {
+//    SportsTheme {
+//        Surface {
+//            SportsList(
+//                sports = LocalSportsDataProvider.getSportsData(),
+//                onClick = {},
+//            )
+//        }
+//    }
+//}

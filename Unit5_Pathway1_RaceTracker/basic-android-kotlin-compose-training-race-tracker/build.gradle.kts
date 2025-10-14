@@ -13,24 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-package com.example.sports.model
-
-import androidx.annotation.DrawableRes
-import androidx.annotation.StringRes
-
-/**
- * Data model for Sport
- */
-data class Sport(
-    val id: Int,
-    @StringRes val titleResourceId: Int,
-    @StringRes val subtitleResourceId: Int,
-    val playerCount: Int,
-    val olympic: Boolean,
-    @DrawableRes val imageResourceId: Int,
-    @DrawableRes val sportsImageBanner: Int,
-    @StringRes val sportDetails: Int,
-
-    val caloriesBurned: Int,
-)
+buildscript {
+    extra.apply {
+        set("lifecycle_version", "2.8.7")
+    }
+}
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+plugins {
+    id("com.android.application") version "8.8.0" apply false
+    id("com.android.library") version "8.8.0" apply false
+    id("org.jetbrains.kotlin.android") version "2.1.0" apply false
+    id("org.jetbrains.kotlin.plugin.compose") version "2.1.0" apply false
+}

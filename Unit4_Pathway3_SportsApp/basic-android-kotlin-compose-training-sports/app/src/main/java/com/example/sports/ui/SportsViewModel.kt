@@ -56,10 +56,31 @@ class SportsViewModel : ViewModel() {
             it.copy(isShowingListPage = false)
         }
     }
+
+    fun toggleSportSelection(sport: Sport) {
+        _uiState.update { state ->
+            val newSelected =
+                if (state.selectedSportIds.contains(sport.id)) {
+                    state.selectedSportIds - sport.id
+                } else {
+                    state.selectedSportIds + sport.id
+                }
+            state.copy(selectedSportIds = newSelected)
+        }
+    }
+    fun getTotalCalories(): Int {
+        val state = _uiState.value
+        return state.sportsList
+            .filter { state.selectedSportIds.contains(it.id) }
+            .sumOf { it.caloriesBurned }
+    }
+
+
 }
 
 data class SportsUiState(
     val sportsList: List<Sport> = emptyList(),
     val currentSport: Sport = LocalSportsDataProvider.defaultSport,
-    val isShowingListPage: Boolean = true
+    val isShowingListPage: Boolean = true,
+    val selectedSportIds: Set<Int> = emptySet()
 )

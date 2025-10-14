@@ -13,24 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
 
-package com.example.sports.model
-
-import androidx.annotation.DrawableRes
-import androidx.annotation.StringRes
-
-/**
- * Data model for Sport
- */
-data class Sport(
-    val id: Int,
-    @StringRes val titleResourceId: Int,
-    @StringRes val subtitleResourceId: Int,
-    val playerCount: Int,
-    val olympic: Boolean,
-    @DrawableRes val imageResourceId: Int,
-    @DrawableRes val sportsImageBanner: Int,
-    @StringRes val sportDetails: Int,
-
-    val caloriesBurned: Int,
-)
+rootProject.name = "Race Tracker"
+include(":app")
