@@ -46,7 +46,9 @@ import coil.request.ImageRequest
 import com.example.marsphotos.R
 import com.example.marsphotos.model.MarsPhoto
 import com.example.marsphotos.ui.theme.MarsPhotosTheme
+import kotlinx.serialization.InternalSerializationApi
 
+@OptIn(InternalSerializationApi::class)
 @Composable
 fun HomeScreen(
     marsUiState: MarsUiState,
@@ -105,6 +107,7 @@ fun ResultScreen(photos: String, modifier: Modifier = Modifier) {
     }
 }
 
+@OptIn(InternalSerializationApi::class)
 @Composable
 fun MarsPhotoCard(photo: MarsPhoto, modifier: Modifier = Modifier) {
 
@@ -127,6 +130,7 @@ fun MarsPhotoCard(photo: MarsPhoto, modifier: Modifier = Modifier) {
     }
 }
 
+@OptIn(InternalSerializationApi::class)
 @Composable
 fun PhotosGridScreen(
     photos: List<MarsPhoto>,
@@ -167,6 +171,7 @@ fun ErrorScreenPreview() {
     }
 }
 
+@OptIn(InternalSerializationApi::class)
 @Preview(showBackground = true)
 @Composable
 fun PhotosGridScreenPreview() {

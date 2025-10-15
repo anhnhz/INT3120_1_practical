@@ -21,6 +21,7 @@ import com.example.marsphotos.rules.TestDispatcherRule
 import com.example.marsphotos.ui.screens.MarsUiState
 import com.example.marsphotos.ui.screens.MarsViewModel
 import kotlinx.coroutines.test.runTest
+import kotlinx.serialization.InternalSerializationApi
 import org.junit.Assert.assertEquals
 import org.junit.Rule
 import org.junit.Test
@@ -30,6 +31,7 @@ class MarsViewModelTest {
     @get:Rule
     val testDispatcher = TestDispatcherRule()
 
+    @OptIn(InternalSerializationApi::class)
     @Test
     fun marsViewModel_getMarsPhotos_verifyMarsUiStateSuccess() =
         runTest {
