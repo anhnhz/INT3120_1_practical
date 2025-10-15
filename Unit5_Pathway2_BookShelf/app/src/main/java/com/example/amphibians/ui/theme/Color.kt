@@ -1,4 +1,4 @@
-package com.example.bookshelf.ui.theme
+package com.example.amphibians.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
