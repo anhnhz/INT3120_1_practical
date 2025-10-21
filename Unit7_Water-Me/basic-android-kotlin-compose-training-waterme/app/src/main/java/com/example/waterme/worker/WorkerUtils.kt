@@ -16,12 +16,15 @@
 
 package com.example.waterme.worker
 
+import android.Manifest
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
 import android.os.Build
+import android.util.Log
+import androidx.annotation.RequiresPermission
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import com.example.waterme.CHANNEL_ID
@@ -33,6 +36,7 @@ import com.example.waterme.REQUEST_CODE
 import com.example.waterme.VERBOSE_NOTIFICATION_CHANNEL_DESCRIPTION
 import com.example.waterme.VERBOSE_NOTIFICATION_CHANNEL_NAME
 
+@RequiresPermission(Manifest.permission.POST_NOTIFICATIONS)
 fun makePlantReminderNotification(
     message: String,
     context: Context
@@ -66,6 +70,7 @@ fun makePlantReminderNotification(
         .setAutoCancel(true)
 
     NotificationManagerCompat.from(context).notify(NOTIFICATION_ID, builder.build())
+    Log.d("WaterReminderWorker", "Sending notification now")
 }
 
 fun createPendingIntent(appContext: Context): PendingIntent {
